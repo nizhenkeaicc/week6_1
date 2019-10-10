@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.itheima.mapper.CustomerMapper">
+    <select id="findCustomerById" parameterType="Integer"
+            resultType="com.itheima.po.Customer">
+		select * from t_customer where id = #{id}
+	</select>
+    <insert id="addCustomer"  parameterType="com.itheima.po.Customer">
+		insert into t_customer(username,job,phone)
+		values(#{username},#{job},#{phone})
+	</insert>
+    <delete id="deleteCustomer" parameterType="Integer">
+		delete from t_customer where id=#{id}
+	</delete>
+</mapper>
+
